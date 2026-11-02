@@ -1,16 +1,20 @@
 numeric_ = X.select_dtypes(exclude=['object']).drop(['MSSubClass'],axis=1).copy()
 numeric_.columns
+
 #分类为数字类型，'MSSubClass'是建筑类型，分为object
 
 cat_train = X.select_dtypes(include=['object']).copy()
 cat_train['MSSubClass'] = X['MSSubClass']
 cat_train.columns
+
 #分为字符类型，加上'MSSubClass'
 
 disc_num_var = ['OverallQual','OverallCond','BsmtFullBath','BsmtHalfBath','FullBath','HalfBath',
                 'BedroomAbvGr', 'KitchenAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageCars', 'MoSold', 'YrSold']
 cont_nume_var = []
+
 #分类离散变量与连续变量
+
 for i in numeric_.columns:
     if i not in disc_num_var:
         cont_nume_var.append(i)
@@ -20,6 +24,7 @@ for index,col in enumerate(cont_nume_var):
     plt.subplot(6,4,index+1)
     sns.distplot(numeric_.loc[:,col].dropna(),kde=False)
 fig.tight_layout(pad=1.0)
+
 #绘制条形图，研究数据分布
 
 
