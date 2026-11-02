@@ -16,6 +16,13 @@ Dataset	Source	: Housing Prices Competition for Kaggle Learn Users
 (https://www.kaggle.com/competitions/home-data-for-ml-course/data)
 
 
+## 使用
+
+journey/main_program直接抄上去就行
+
+summary/visual_display.py是可视化展示
+
+
 ## License
 This project is licensed under the MIT License — see the LICENSE file for details.
 
